@@ -1,0 +1,17 @@
+.label {
+  border-radius: 20px;
+  background-color: rgb(var(--blue));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgb(var(--white));;
+  padding: 2px 8px;
+
+  border: none;
+
+  cursor: pointer;
+}
