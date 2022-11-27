@@ -6,8 +6,7 @@ const actions: NotionActions = {
     try {
       this._getProblemsIsLoading = true;
       const result = await Notion.getDatabase({
-        tags: this._tags,
-        title: this._search,
+        ...this.currentFilters,
         ...options ?? {},
       });
       this._problems = result.results;
