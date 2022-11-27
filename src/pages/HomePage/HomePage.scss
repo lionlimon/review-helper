@@ -1,7 +1,15 @@
 .home {
   padding: 15px 13px;
+  position: relative;
 
   &__labels {
     padding-bottom: 10px;
+  }
+
+  &__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }

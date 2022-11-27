@@ -45,11 +45,12 @@ import { computed, ref, watch } from 'vue';
 import useNotionStore from '@/store/notion';
 import { debounce } from 'lodash';
 
+const { search = '', ...store } = useNotionStore();
 const closeWindow = window.close;
-const searchText = ref('');
+const searchText = ref(search);
 const searchIsVisible = ref(false);
-const inputModifiers = computed(() => ({ 'header__search-input--active': searchIsVisible.value }));
-const store = useNotionStore();
+const inputModifiers = computed(() => ({ 'header__search-input--active': !!search || searchIsVisible.value }));
+
 const setSearchDebounced = debounce(() => store.setSearch(searchText.value), 300);
 
 const toggleSearch = () => {

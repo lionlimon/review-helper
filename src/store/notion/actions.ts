@@ -5,7 +5,11 @@ const actions: NotionActions = {
   async getProblems(this: ActionsThis<NotionActions>, options?: GetProblemOptions) {
     try {
       this._getProblemsIsLoading = true;
-      const result = await Notion.getDatabase(options);
+      const result = await Notion.getDatabase({
+        tags: this._tags,
+        title: this._search,
+        ...options ?? {},
+      });
       this._problems = result.results;
 
       return result;
