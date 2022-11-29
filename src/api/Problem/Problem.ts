@@ -22,7 +22,7 @@ class Problem {
     if (options?.title) params.push(['title', options.title]);
 
     return this.http<ProblemItem[]>(
-      `database${options ? `?${new URLSearchParams(params)}` : ''}`,
+      `problems${options ? `?${new URLSearchParams(params)}` : ''}`,
     );
   }
 }
