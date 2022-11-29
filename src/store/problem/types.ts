@@ -1,7 +1,7 @@
-import { GetDatabaseResponse, Problem } from '@/api/Problem/types';
+import { ProblemItem } from '@/api/Problem/types';
 
 export type ProblemState = {
-  _problems: Problem[],
+  _problems: ProblemItem[],
   _tags: string[],
   _getProblemsIsLoading: boolean,
   _search: string,
@@ -28,7 +28,7 @@ export type ActionsThis<A> = ProblemState & ProblemGettersValues & A;
 
 export type ProblemActions = {
   getProblems(options?: GetProblemOptions):
-    Promise<GetDatabaseResponse>,
+    Promise<ProblemItem>,
   setTag(tag: string): Promise<void>,
   unsetTag(tag: string): Promise<void>,
   setSearch(search: string): Promise<void>,
