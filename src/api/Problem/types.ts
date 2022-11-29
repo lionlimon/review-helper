@@ -83,22 +83,9 @@ export interface Properties {
   title: Title;
 }
 
-export interface Problem {
-  object: string;
-  id: string;
-  created_time: Date;
-  last_edited_time: Date;
-  created_by: CreatedBy;
-  last_edited_by: LastEditedBy;
-  parent: Parent;
-  archived: boolean;
-  properties: Properties;
-  url: string;
-}
-
-export interface GetDatabaseResponse {
-  object: string;
-  results: Problem[];
-  has_more: boolean;
-  type: string;
+export interface ProblemItem {
+  id: string,
+  title: string,
+  tags: string[],
+  text: string,
 }

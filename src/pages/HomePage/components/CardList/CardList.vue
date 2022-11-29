@@ -23,9 +23,9 @@
 <script setup lang="ts">
 import CardBox from '@/components/CardBox';
 import LabelBox from '@/components/LabelBox';
-import useNotionStore from '@/store/notion';
+import useProblemStore from '@/store/problem';
 
-const store = useNotionStore();
+const store = useProblemStore();
 </script>
 
 <style scoped lang="scss" src="./CardList.scss"></style>

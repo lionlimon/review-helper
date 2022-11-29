@@ -35,13 +35,13 @@
 
 <script lang="ts" setup>
 import CardList from '@/pages/HomePage/components/CardList';
-import useNotionStore from '@/store/notion';
 import { computed, onMounted } from 'vue';
 import LabelList from '@/pages/HomePage/components/LabelList';
+import useProblemStore from '@/store/problem';
 import SkeletonList from './components/SkeletonList';
 import StripeLoader from './components/StripeLoader';
 
-const store = useNotionStore();
+const store = useProblemStore();
 
 const showSkeleton = computed(() => (
   store.getProblemsIsLoading && !store.problems.length

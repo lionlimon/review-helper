@@ -17,11 +17,11 @@
 </template>
 
 <script setup lang="ts">
-import useNotionStore from '@/store/notion';
 import LabelBox from '@/components/LabelBox';
 import SvgIcon from '@/components/SvgIcon';
+import useProblemStore from '@/store/problem';
 
-const store = useNotionStore();
+const store = useProblemStore();
 </script>
 
 <style scoped lang="scss" src="./LabelList.scss"></style>

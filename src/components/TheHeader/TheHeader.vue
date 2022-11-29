@@ -42,10 +42,10 @@
 <script setup lang="ts">
 import SvgIcon from '@/components/SvgIcon';
 import { computed, ref, watch } from 'vue';
-import useNotionStore from '@/store/notion';
 import { debounce } from 'lodash';
+import useProblemStore from '@/store/problem';
 
-const store = useNotionStore();
+const store = useProblemStore();
 const closeWindow = window.close;
 const searchText = ref(store.search);
 const searchIsVisible = ref(!!store.search);

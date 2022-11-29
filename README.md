@@ -26,8 +26,8 @@
 │   └── ...
 ├── src
 │   ├── api // Каталог с api сущностями
-│   │   └── Notion
-│   │       ├── Notion.ts
+│   │   └── Problem
+│   │       ├── Problem.ts
 │   │       ├── index.ts
 │   │       └── types.ts
 │   ├── assets // Шрифты и разного рода изображения
@@ -60,7 +60,7 @@
 │   │       ├── HomePage.vue
 │   │       └── index.ts
 │   ├── store
-│   │   └── notion
+│   │   └── problem
 │   │       ├── actions.ts
 │   │       ├── getters.ts
 │   │       ├── index.ts

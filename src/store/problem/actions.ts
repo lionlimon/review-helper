@@ -1,15 +1,15 @@
-import Notion from '@/api/Notion';
-import { ActionsThis, GetProblemOptions, NotionActions } from './types';
+import Problem from '@/api/Problem';
+import { ActionsThis, GetProblemOptions, ProblemActions } from './types';
 
-const actions: NotionActions = {
-  async getProblems(this: ActionsThis<NotionActions>, options?: GetProblemOptions) {
+const actions: ProblemActions = {
+  async getProblems(this: ActionsThis<ProblemActions>, options?: GetProblemOptions) {
     try {
       this._getProblemsIsLoading = true;
-      const result = await Notion.getDatabase({
+      const { data: result } = await Problem.getProblems({
         ...this.currentFilters,
         ...options ?? {},
       });
-      this._problems = result.results;
+      this._problems = result;
 
       return result;
     } catch (e) {
@@ -20,19 +20,19 @@ const actions: NotionActions = {
     }
   },
 
-  async setTag(this: ActionsThis<NotionActions>, tag: string) {
+  async setTag(this: ActionsThis<ProblemActions>, tag: string) {
     if (this._tags.includes(tag)) return;
 
     this._tags.push(tag);
     await this.getProblems(this.currentFilters);
   },
 
-  async unsetTag(this: ActionsThis<NotionActions>, tag: string) {
+  async unsetTag(this: ActionsThis<ProblemActions>, tag: string) {
     this._tags = this._tags.filter((tagItem) => tagItem !== tag);
     await this.getProblems(this.currentFilters);
   },
 
-  async setSearch(this: ActionsThis<NotionActions>, search: string) {
+  async setSearch(this: ActionsThis<ProblemActions>, search: string) {
     this._search = search;
     await this.getProblems(this.currentFilters);
   },

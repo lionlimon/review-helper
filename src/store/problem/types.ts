@@ -1,6 +1,6 @@
-import { GetDatabaseResponse, Problem } from '@/api/Notion/types';
+import { GetDatabaseResponse, Problem } from '@/api/Problem/types';
 
-export type NotionState = {
+export type ProblemState = {
   _problems: Problem[],
   _tags: string[],
   _getProblemsIsLoading: boolean,
@@ -16,7 +16,7 @@ export type FilteredProblem = {
 
 export type GetProblemOptions = { tags?: string[], title?: string };
 
-export type NotionGettersValues = {
+export type ProblemGettersValues = {
   problems: FilteredProblem[],
   tags: string[],
   getProblemsIsLoading: boolean,
@@ -24,9 +24,9 @@ export type NotionGettersValues = {
   currentFilters: GetProblemOptions
 }
 
-export type ActionsThis<A> = NotionState & NotionGettersValues & A;
+export type ActionsThis<A> = ProblemState & ProblemGettersValues & A;
 
-export type NotionActions = {
+export type ProblemActions = {
   getProblems(options?: GetProblemOptions):
     Promise<GetDatabaseResponse>,
   setTag(tag: string): Promise<void>,
