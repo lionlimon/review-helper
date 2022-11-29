@@ -28,7 +28,7 @@ export type ActionsThis<A> = ProblemState & ProblemGettersValues & A;
 
 export type ProblemActions = {
   getProblems(options?: GetProblemOptions):
-    Promise<ProblemItem>,
+    Promise<ProblemItem[]>,
   setTag(tag: string): Promise<void>,
   unsetTag(tag: string): Promise<void>,
   setSearch(search: string): Promise<void>,
