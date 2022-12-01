@@ -7,5 +7,17 @@
 
   &__text {
     margin-top: 10px;
+
+    // html 
+    :deep(a) {
+      color: rgb(var(--blue));
+    }
+
+    :deep(code) { 
+      background-color: rgba(var(--gray-light), .7);
+      border-radius: 3px;
+      padding-left: 3px;
+      padding-right: 3px;
+    }
   }
 }

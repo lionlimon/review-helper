@@ -31,9 +31,8 @@
     <div
       v-if="isOpen"
       class="card-list-item__text"
-    >
-      {{ text }}
-    </div>
+      v-html="text"
+    />
   </CardBox>
 </template>
 
