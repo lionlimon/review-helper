@@ -14,12 +14,7 @@
 
 <script setup lang="ts">
 import useProblemStore from '@/store/problem';
-import { useClipboard } from '@vueuse/core';
 import CardListItem from '../CardListItem';
-
-const onCopyClick = (text: string) => {
-  useClipboard({ source: text });
-};
 
 const store = useProblemStore();
 </script>
