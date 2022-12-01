@@ -1,29 +1,25 @@
 <template>
   <div class="card-list">
-    <CardBox
+    <CardListItem
       v-for="problem in store.problems"
       :key="problem.id"
       class="card-list__item"
       :title="problem.title"
-    >
-      <div class="card-list__item-tags">
-        <LabelBox
-          v-for="tag in problem.tags"
-          :key="tag"
-          @click="store.setTag(tag)"
-        >
-          {{ tag }}
-        </LabelBox>
-      </div>
-      {{ problem.text }}
-    </CardBox>
+      :tags="problem.tags"
+      :text="problem.text"
+      @on-tag-click="tag => store.setTag(tag)"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import CardBox from '@/components/CardBox';
-import LabelBox from '@/components/LabelBox';
 import useProblemStore from '@/store/problem';
+import { useClipboard } from '@vueuse/core';
+import CardListItem from '../CardListItem';
+
+const onCopyClick = (text: string) => {
+  useClipboard({ source: text });
+};
 
 const store = useProblemStore();
 </script>

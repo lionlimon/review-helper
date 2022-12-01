@@ -26,4 +26,11 @@
     line-height: 1.29;
     padding: 10px;
   }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 }

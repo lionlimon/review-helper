@@ -1,0 +1,11 @@
+.card-list-item {
+
+  &__tags {
+    display: flex;
+    gap: 9px;
+  }
+
+  &__text {
+    margin-top: 10px;
+  }
+}

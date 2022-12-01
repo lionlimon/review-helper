@@ -4,6 +4,13 @@
       <h2 class="card__title">
         {{ props.title }}
       </h2>
+
+      <div
+        v-if="$hasSlot('actions')"
+        class="card__actions"
+      >
+        <slot name="actions" />
+      </div>
     </header>
 
     <div class="card__content">
