@@ -1,8 +1,32 @@
 <template>
   <header class="header">
-    <h1 class="header__title">
-      &lt;!&gt; Частые ошибки
-    </h1>
+    <div class="header__left-panel">
+      <h1 class="header__title">
+        &lt;!&gt;
+      </h1>
+
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <RouterLink
+              to="/"
+              class="header__menu-link"
+            >
+              Ошибки
+            </RouterLink>
+          </li>
+
+          <li class="header__menu-item">
+            <RouterLink
+              to="/checklist"
+              class="header__menu-link"
+            >
+              Чек-лист
+            </RouterLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <div class="header__actions">
       <form class="header__search">

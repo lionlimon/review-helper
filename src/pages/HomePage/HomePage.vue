@@ -6,7 +6,6 @@
     >
       <StripeLoader
         v-if="showStripeLoading"
-        class="home__loader"
       />
     </Transition>
     <LabelList
@@ -38,8 +37,8 @@ import CardList from '@/pages/HomePage/components/CardList';
 import { computed, onMounted } from 'vue';
 import LabelList from '@/pages/HomePage/components/LabelList';
 import useProblemStore from '@/store/problem';
+import StripeLoader from '@/components/StripeLoader';
 import SkeletonList from './components/SkeletonList';
-import StripeLoader from './components/StripeLoader';
 
 const store = useProblemStore();
 

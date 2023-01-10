@@ -1,8 +1,13 @@
 <template>
   <div class="card">
-    <header class="card__header">
-      <h2 class="card__title">
-        {{ props.title }}
+    <header
+      v-if="title"
+      class="card__header"
+    >
+      <h2
+        class="card__title"
+      >
+        {{ title }}
       </h2>
 
       <div
@@ -20,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  title: string
+defineProps<{
+  title?: string
 }>();
 </script>
 

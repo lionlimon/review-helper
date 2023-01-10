@@ -9,6 +9,11 @@
 }
 
 .stripe-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
   height: 5px;
   background-color: rgb(var(--blue));
   animation: pulse 0.5s infinite alternate;

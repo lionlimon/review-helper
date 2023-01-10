@@ -1,5 +1,5 @@
 <template>
-  <main class="home-page">
+  <main class="main-layout">
     <TheHeader />
     <RouterView />
   </main>

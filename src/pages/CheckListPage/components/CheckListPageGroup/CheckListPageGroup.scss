@@ -1,0 +1,20 @@
+.check-list-page-group {
+  &__select {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+
+    margin: 0 0 14px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-gap: 10px;
+  }
+}

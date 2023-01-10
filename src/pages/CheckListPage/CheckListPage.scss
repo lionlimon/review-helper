@@ -1,0 +1,10 @@
+.check-list {
+  padding: 15px 13px;
+  position: relative;
+
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+  }
+}
