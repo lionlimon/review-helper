@@ -45,7 +45,7 @@ const props = defineProps<{
 const emit = defineEmits<{(e: 'onChangeState', state: CheckState): void }>();
 
 const checkBoxState = ref<CheckState>(props.value ?? 'empty');
-const onChange = (e: InputEvent) => {
+const onChange = (e: Event) => {
   switch (checkBoxState.value) {
     case 'empty':
       checkBoxState.value = 'checked';
