@@ -4,6 +4,7 @@ import {
 
 import HomePage from '@/pages/HomePage';
 import CheckListPage from '@/pages/CheckListPage';
+import initHandlers from '@/routes/handlers';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -23,5 +24,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
+
+initHandlers(router);
 
 export default router;
