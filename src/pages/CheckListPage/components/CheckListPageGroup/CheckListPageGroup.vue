@@ -25,7 +25,7 @@
             :value="checkListStore.getCheckType(check.id)"
             @on-change-state="(state) => onChangeCheckState(state, check.id)"
           >
-            {{ check.title }}
+            {{ check.subTask }}. {{ check.title }}
           </TripleCheck>
         </li>
       </ul>

@@ -1,1 +1,1 @@
-export type CheckListItem = Record<'id' | 'title' | 'subTask' | 'explainText', string>;
+export type CheckListItem = Record<'id' | 'title' | 'explainText', string> & { subTask: number };

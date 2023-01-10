@@ -43,6 +43,7 @@
         @click="toggleSearch"
       >
         <SvgIcon
+          v-if="$route.name === 'home'"
           name="search"
           width="18"
           height="18"

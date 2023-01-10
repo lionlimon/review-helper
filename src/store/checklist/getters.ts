@@ -28,13 +28,13 @@ const getters = {
   summary(state: CheckListState) {
     const startString = 'Не выполнены следующие задания:\n\n';
     const uncheckedItems = Object.values(state._checked)
-      .filter((item) => item.subTask)
+      .filter((item) => item.subTask && item.state === 'unchecked')
       .sort((a, b) => {
         if (Number(a.subTask) > Number(b.subTask)) return 1;
 
         return -1;
       })
-      .reduce((summaryText, item) => `${summaryText}${item.subTask ?? ''} ${item.explainText}\n`, startString);
+      .reduce((summaryText, item) => `${summaryText}${item.subTask}. ${item.explainText}\n`, startString);
 
     return uncheckedItems;
   },
